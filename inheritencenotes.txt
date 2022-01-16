@@ -1,0 +1,110 @@
+/*to make private member inheritable we can use protected visiblity modifier
+protected data is visible to its functions and inherited class
+*when a proteced member is inherited in public mode, it becomes protected in the derived class too
+ and therefore is accessible by the member fuctions of the deriived class.
+ in private it becomes private
+ in protected : both the public and protected members become protected members of the derived class
+*/
+
+
+/*                                      MULTI LEVEL INHERITENCE
+A->B->C....
+Multiple iheritence:
+Syntax:
+class class-name: visbility-1 class-name1,visibility-2 class-name-2
+{
+    body of class;
+}
+
+Ex:
+class P:public M, public N
+{
+    public:
+    void display(void);
+}
+
+Note: occasionally , we may face a problem in using the multiple inheritance,
+ when a function with the same name appears in more than one base class.
+ 
+ Ex:
+ class M
+ {
+     public:
+     void display(void)
+     {
+         cout<<"Class M\n";
+     }
+
+ };
+ class N 
+ {
+     public:
+     void display()
+     {
+         cout<<"class N"<<endl;
+     }
+ }
+
+ to solve this :
+ class P:public M, public N
+ {
+     public:
+     void display(void)//overrides display of M and N
+     {
+         M::display();
+     }
+ };
+
+
+ Similar problem may arise in single level inheritence but it can be avoided using:
+ while calling in main if public:
+ B b;
+ b.display();  dispaly in B is called
+ b.A::display();  display in A is called 
+ b.B::display();  display in B is called
+*/
+ 
+
+ HIERARCHICAL inheritance
+ inheritance can be used to support to the heirarchical design of a program.
+
+ the base class includes all the features that are common to the subclasses. A subclass can be constructed by inheriting the properties of the baseclass.
+ A subclass can serve as a base class for the lower level classes and so on.
+
+
+ Virtual Base classes
+ all three kinds of inheritence, namely, multilevel, multiple and hierarchical inheritance, are involved.
+
+ when 2 classes are inherited by one single base class and another class inherits these two class
+ then it creates a ambiguity as the members of the grandparent class gets inherited twice in the grandson class
+ so to resolve this we declare the two father classes as virtual base class
+
+ Syntax:
+ calss A
+ {
+     .............
+     .............
+ };
+ class B1:public virtual A
+ {
+     .....................
+     ............
+ };
+ class B2:public virtual A
+ {
+     .............
+     .............
+ };
+ class C::public B1,public B2
+ {
+     ..............
+ };
+
+
+
+ Abstract base class
+
+ the class that is not used to create ojects. An abstract class is designed only to act as a
+ base class .It  is a design concept in program development and provides a base upon which other classes may be built.
+ Node: the definiton of a class can ony be considereed as an abstract class if it has at least one pure virtual fuctions
+ 

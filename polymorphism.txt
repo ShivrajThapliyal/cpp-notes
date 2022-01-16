@@ -1,0 +1,52 @@
+one name multiple forms
+                                           polymorphism
+                    compile time                                   run time 
+        function                operator                          virtual funcitons
+        overloading            overloading
+
+        pointers in cpp
+        declaring and initializing pointers 
+        data_type * pointer-variable;
+        Ex:
+        int *ptr;
+        int *ptr,a;
+        ptr=&a;
+
+        pointers are similar to c 
+        and double pointers also
+
+        **clscr() in cpp to clear screen
+        pointer to a fucntion 
+        data-type(*function_name)();
+
+        pointer to an object 
+        
+        item obj;
+        item *ptr=&obj;
+
+        obj.getdata(20);=======ptr->getdata(20)=======(*ptr)getdata(20)
+
+        we can also create objects using pointers and new keyword
+
+-this pointer :the unique keyword called this to represent an object that invoks a member 
+function 'this' is a ppointer that points to the object for which this fuctionwas called.
+
+ex: A.max()
+will se the this pointer to A.
+the starting address is same as the address of the first variable in the class structure.
+-passed to member functions automatically when it is called
+-acts as an implicit argument to all the member functions.
+
+Pointers to derived classes
+-Pointers to objects of a base class are type compatibel wtith pointers to objects of a derived calss.
+-but we can only access those members of the derived class that are inherited from the base class.
+
+                                                  virtual functions:
+-if a pointer of the base class points to an object of the derived class then to access the private members of the 
+derived class with same name as that in the base class
+-the base class fuction is declared virtual 
+syntax:
+virtual void display()
+{
+    ...............;
+}

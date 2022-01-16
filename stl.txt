@@ -1,0 +1,33 @@
+very helpful for competitive programming
+library of :generic classes and functions in cpp
+save time
+
+components of stl:
+i.container(stores data)->uses template calsses
+ii.algorithms 
+iii.iterator(object that points to an element in the container )
+    it connects algoritms and components
+    -handled just like pointers
+
+containers:
+-sequence containers->linear fashion(vector,list,dequeue)
+-associate containers->direct access(map,multimap,dictionary,set,multimap)
+-derived containers->real world modelling->stack,queue,priority queue
+
+*sequence containers:
+vecotor:
+random access:fast
+in middle insertion/deletion:slow
+insertion at the end:fast
+
+list:
+-random access:slow
+-middle insertion :fast
+
+associative containers:
+-all operations fast 
+-except random
+
+Derived containers:
+depends -data structures
+

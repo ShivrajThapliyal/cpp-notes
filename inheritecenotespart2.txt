@@ -1,0 +1,38 @@
+Constructors in derived classes:
+1.if base class doesn't take aby argument the derived class need not have a constructor function.
+2.IF any base lass contains a consrtructor wih one or more arguments,, then it is mandatory for the derived class to ahve a Constructor
+and pass the arguments to the base class constructors.
+(while applying inhertance we usually create objects uing the derived class, thus we usually create objects using the 
+derived calss)
+3.If both base and derived class have constructor then the constructor of the base class is executed first
+4.In case of multiple inheritance, the base classes are constructed in the order in which they appear in the declcaration of the derived calss.
+5.In multilevel inheritence the constructor is executed in order of inheritence
+
+6*.the constructor for the virtual base class is executed first than a non virtual class
+7.If there are multiple virtual base class then they are declared in order of their declcaration
+
+
+Member class : Nestinb of classes
+
+other than inheritence c++ supports another way of inheriting properties of one class inot another
+this approach takes a view that an object can be a collection of many other objects. That is, a class can contain objedts of ther classes 
+as its members
+
+Ex:
+class alpha{......};
+class beta{......};
+class gamma
+{
+    alpha a;
+    beta b;
+}
+
+
+this is called "container ship" or "nesting".
+-creation of the member objects takes place before than of the gamma object
+-that means the members of alpha and beta need to be initaialized before gamma
+-thir constructors must be initialized before that of gamma
+
+so their declaration is similar as the derived class;
+
+gamma(arglist):alpha(arglist),beta(arglist)

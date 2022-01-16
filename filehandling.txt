@@ -1,0 +1,90 @@
+file: a collection of relaed data stored in a particular area on teh disk.
+A program includes:
+1.Data transfer between the console unit and the program
+2.Data transfer between the program and a disk file.
+
+stream for files:
+1.ifstream
+provides input operaions 
+2.ofstream
+ provides output operations
+ 3.fstream
+    simultaneous input and output operations
+
+Opening and closing a file
+
+1.suitable name of a file
+2.data type and strcuture 
+3.purpose
+4.opening method
+
+the filename is a string of characters that make up a valid filename for the operating system.
+it may contain two parts ,a primary names and an optional period with extention
+
+
+ A FILE  can be opened in two ways:
+ !.using the constructor function of the class.(useful when we use only one file)
+ EX:
+ ofstrem outfile("results");//for output
+
+ ifstream infile("Data");//for input
+
+ closing the file :
+ outfile.close();
+
+
+ 2.Using the member functon open()of the class.(when we need to merge multiple files)
+  ofstream outfile;
+  outfile.open("Data1");
+
+  outfile.eof():keeps the check on end of file characters
+  returns 0 on reaching the endof the file
+
+  File modes
+  stream-object.open("filename",mode);
+
+    PARAMETERS                       MEANING
+  1.ios::app                        append to end-of-file
+  2.ios::ate                        go to end-of-file on opening
+  3.ios::binary                     binary file
+  4.ios::in                         open file for reading only
+  5.ios::nocreate                   open fails if the file does not exist
+  6.ios::noreplace                  open fails if the file already exists
+  7.ios::out                        open file for writing only
+  8.ios::trunc                      delete the contents of the file if it exists
+
+  File pointers and their manipulations:
+
+  -Each file has two associated pointer known as teh file pointers.
+  -One of them is the input pointer and the other is the output pointer.
+  -input:used for reading the contents of the file and the output is used to write the contents to the file
+  -Each time input or output opertation takes place the appropriate pointer is automaticlly advanced.
+
+
+  Functions for manipulating file pointers
+
+  1.seekg():moves get pointer to a specified location.
+  2.seekp():moves put pointer to a specified location
+  3.tellg():gives the current position of the get pointer.
+  4.tellp():gives the current position of teh put pointer.
+
+  Ex.
+        infile.seekg(10):moves the file pointer to the byte numer 10
+
+
+Specifying the offset:
+    seekg(offset,refposition);
+    seekp(offset,refposition);
+
+    offset:number of bytes the file pointer ist ob e movesd from the location specified bye the 
+    parmaeter reposition.
+    *offset can be negative meaning go x bytes backwards
+
+    refpoistiion takes ohn e of the following three constants defined in the ios class.
+
+    .ios::beg   start of teh file 
+    .ios::cur   current postiion of the pointer 
+    .ios::eof   end of file
+
+
+

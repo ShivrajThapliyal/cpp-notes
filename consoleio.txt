@@ -1,0 +1,43 @@
+Cpp has uses the concept of stream and stream classes to iplement i/o operations
+-i/o sstem in cpp is designed to work with a wide ariety of devices includeing treminals ,disks, and tape drives
+stream: A stream is a sequence of bytes. It acts etiher as a suurce from which the 
+input data can be obtainded or as a destivation to which the output data can be sent.
+-The source stram that provides tdata to the progaram is called the input stream and the dessivation stream thagt receives toutput from 
+the program is called the output stream.
+-basically a stream extracts the bytes from the input stream and inserts bytes on the output stream
+-stream acts as an interface between the i/o devices
+
+
+The classes istream and ostream define  two member fucions get) and put() respectively to handle the single cahracter i/o
+we can use : get(char*)  or get(void): to fetch a charactr including blank space, taband the newlive cahracter
+get(char *): assigns the inut character 
+get(void):returns the input character
+char c;
+cin.get(c);
+or 
+c=cin.get();
+
+cout.put(c);
+
+getline(line ,size);
+***  cout.write(line, size);
+
+
+Formatted console I/O operations
+
+1.width()  2.precision()    3.fill()    4.setf()    5.unsetf()
+
+cout.width(int w);
+cout<<543;
+out:__543
+it looses its setting after printing once
+
+2.cout.precesion(d);
+cout.precesion(3);
+cout<<sqrt(2);
+out:1.141
+doesn't loose its setting
+
+3.cout.fill('*')
+this will fill the remaining fields with *
+

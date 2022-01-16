@@ -1,0 +1,71 @@
+a template enabels us to define generic classes dn functions and thus provides support for generic programming .
+-A template class can be used to create a family of classes or functions. 
+-When an object of a speciefied type is defined for actual use, the template definition for that class is substituted with the required data type.
+-The templates are sometimes called parametrized classes or functions.
+***very important for competitive programming
+why use templates?
+-templates are used to implement DRY principle (do not repeat yourself)
+-generic programming
+
+syntax:
+template<class T>//T can be any data type
+class vector
+{
+    T * arr;
+    public:
+        vecotor(T * arr)
+        {
+            //code;
+        }
+        //and many more methods
+};
+int main()
+{
+    //to use it use:
+    vector<int>myvecc(ptr);
+    vector<float>myfvecc(ptr);
+    return 0;
+}
+checkout:template.cpp
+
+a template can have multiple data types:
+syntax :
+template<class T1,class T2>
+class NameOfClass
+{
+    //body
+};
+
+class Templates with default papameters
+syntax:
+template<T1=float,T2=int>
+//if you don't specify inside triangular brackets
+then default data types will be used
+
+
+***fucntion template
+template<class T1,class T2>
+float funcAverage(T1 a,T2 b)
+{
+    float abg=(a+b)/2.0;
+    return avg;
+}
+
+member function templates:
+template <class T>
+class Shivraj{
+    public:
+        T data;
+        Harry(T a)
+        {
+            data=a;
+        }
+        void display();
+}
+
+template <class T>
+void Shivraj<T>::display()
+{
+    cout<<data;
+}
+if you overload function then exact match will take highest priority
